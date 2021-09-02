@@ -16,9 +16,9 @@ document.getElementById("searchInput").addEventListener("keyup", (e) => {
 */
 
 /*
-<-------------------- Getting Input By Calling Arrow Functions -------------------->
-<-------------------- Getting Input By Calling Arrow Functions -------------------->
-<-------------------- Getting Input By Calling Arrow Functions -------------------->
+<-------------------- Getting Input By InputText -------------------->
+<-------------------- Getting Input By InputText -------------------->
+<-------------------- Getting Input By InputText -------------------->
 */
 
 const getInputText = () => {
@@ -63,20 +63,20 @@ const getBooks = async (searchText) => {
 
 const displayBooks = (data) => {
   const books = data.docs;
-  const numberofBooksFound = data.numFound;
+  const numberOfBooksFound = data.numFound;
   const bookList = document.getElementById("book-list");
   const h5 = document.getElementById("numberofBooks");
   /*
 <-------------------- Start of Conditions for the number of books to be found -------------------->
 */
-  if (numberofBooksFound > 100) {
-    h5.innerHTML = `Showing <span class="text-green">100</span> out of <span class="text-green">${numberofBooksFound}</span> books found`;
-  } else if (numberofBooksFound === 1) {
-    h5.innerHTML = `Showing <span class="text-green">${numberofBooksFound}</span> book in the List`;
-  } else if (numberofBooksFound === 0) {
+  if (numberOfBooksFound > 100) {
+    h5.innerHTML = `Showing <span class="text-green">100</span> out of <span class="text-green">${numberOfBooksFound}</span> books found`;
+  } else if (numberOfBooksFound === 1) {
+    h5.innerHTML = `Showing <span class="text-green">${numberOfBooksFound}</span> book in the List`;
+  } else if (numberOfBooksFound === 0) {
     h5.innerHTML = `<span class="text-danger">Sorry no books found by this name . . .</span>`;
   } else {
-    h5.innerHTML = `Showing <span class="text-green">${numberofBooksFound}</span> books in the list`;
+    h5.innerHTML = `Showing <span class="text-green">${numberOfBooksFound}</span> books in the list`;
   }
   /*
 <-------------------- End of Conditions for the number of books to be found -------------------->
