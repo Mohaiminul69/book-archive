@@ -1,9 +1,25 @@
+/*
+<-------------------- Event Listeners Calling Functions -------------------->
+<-------------------- Event Listeners Calling Functions -------------------->
+<-------------------- Event Listeners Calling Functions -------------------->
+*/
+
 document.getElementById("searchBtn").addEventListener("click", () => {
   getInputText();
 });
 document.getElementById("searchInput").addEventListener("keyup", (e) => {
   if (e.key === "Enter") getInputText();
 });
+
+/*
+<-------------------- Event Listeners End -------------------->
+*/
+
+/*
+<-------------------- Getting Input By Calling Arrow Functions -------------------->
+<-------------------- Getting Input By Calling Arrow Functions -------------------->
+<-------------------- Getting Input By Calling Arrow Functions -------------------->
+*/
 
 const getInputText = () => {
   const inputText = document.getElementById("searchInput").value;
@@ -12,12 +28,25 @@ const getInputText = () => {
   loadingToggler("block");
   getBooks(inputText);
 };
+
+/*
+<-------------------- Loading Spinner & Clearing Book List -------------------->
+<-------------------- Loading Spinner & Clearing Book List -------------------->
+<-------------------- Loading Spinner & Clearing Book List -------------------->
+*/
+
 const loadingToggler = (displayClass) => {
   document.getElementById("loadingBtn").style.display = displayClass;
 };
 const searchResultCleaner = (displayClass) => {
   document.getElementById("book-list-container").style.display = displayClass;
 };
+
+/*
+<-------------------- Fetching the list of Books by Async Await -------------------->
+<-------------------- Fetching the list of Books by Async Await -------------------->
+<-------------------- Fetching the list of Books by Async Await -------------------->
+*/
 
 const getBooks = async (searchText) => {
   const url = `https://openlibrary.org/search.json?q=${searchText}`;
@@ -26,23 +55,34 @@ const getBooks = async (searchText) => {
   displayBooks(data);
 };
 
+/*
+<-------------------- Displaying the Books in the UI -------------------->
+<-------------------- Displaying the Books in the UI -------------------->
+<-------------------- Displaying the Books in the UI -------------------->
+*/
+
 const displayBooks = (data) => {
   const books = data.docs;
   const numberofBooksFound = data.numFound;
   const bookList = document.getElementById("book-list");
   const h5 = document.getElementById("numberofBooks");
+  /*
+<-------------------- Start of Conditions for the number of books to be found -------------------->
+*/
   if (numberofBooksFound > 100) {
-    h5.innerHTML = `Showing <span class="text-blue">100</span> out of <span class="text-blue">${numberofBooksFound}</span> Found Books`;
+    h5.innerHTML = `Showing <span class="text-green">100</span> out of <span class="text-green">${numberofBooksFound}</span> books found`;
   } else if (numberofBooksFound === 1) {
-    h5.innerHTML = `Showing <span class="text-blue">${numberofBooksFound}</span> Book in the List`;
+    h5.innerHTML = `Showing <span class="text-green">${numberofBooksFound}</span> book in the List`;
   } else if (numberofBooksFound === 0) {
     h5.innerHTML = `<span class="text-danger">Sorry no books found by this name . . .</span>`;
   } else {
-    h5.innerHTML = `Showing <span class="text-blue">${numberofBooksFound}</span> Books in the List`;
+    h5.innerHTML = `Showing <span class="text-green">${numberofBooksFound}</span> books in the list`;
   }
+  /*
+<-------------------- End of Conditions for the number of books to be found -------------------->
+*/
   bookList.textContent = "";
   books.forEach((book) => {
-    console.log(book);
     const div = document.createElement("div");
     div.classList.add("col", "rounded-3", "py-3", "mt-2");
     div.innerHTML = `
@@ -53,18 +93,42 @@ const displayBooks = (data) => {
                 : `<img src="./img/image-not-found-scaled-1150x647.png" class="img-fluid card-img-top" />`
             }              
               <div class="card-body d-flex flex-column justify-content-start">
-                <h5 class="card-title">Book Name: ${book.title}</h5>
-                <h5 class="card-title">Author Name: ${
-                  book.author_name ? book.author_name : "Author not found"
-                }</h5>
-                <h5 class="card-title">Publisher Name: ${
-                  book.publisher ? book.publisher[0] : "Not Found"
-                }</h5>
-                <h5 class="card-title">Publish Year: ${
-                  book.first_publish_year
-                    ? book.first_publish_year
-                    : "Publish Date Not Available."
-                }</h5>
+                <table class="table">
+                  <tbody>
+                    <tr class="fw-bold">
+                      <td class="w-43">Book Name :</td>
+                      <td class="text-grey text-capitalize">${book.title}</td>
+                    </tr>
+                    <tr class="fw-bold">
+                      <td class="w-43">Author Name :</td>
+                      <td class="text-grey text-capitalize">${
+                        book.author_name
+                          ? book.author_name[0]
+                          : "Author not found"
+                      }
+                      </td>
+                    </tr>
+                    <tr class="fw-bold">
+                      <td class="w-43">Publisher Name :</td>
+                      <td class="text-grey text-capitalize">${
+                        book.publisher
+                          ? book.publisher[0]
+                          : "Publisher Not Found"
+                      }
+                      </td>
+                    </tr>
+                    <tr class="fw-bold">
+                      <td class="w-43">Publish Year :</td>
+                      <td class="text-grey text-capitalize">
+                        ${
+                          book.first_publish_year
+                            ? book.first_publish_year
+                            : "Publish Date Not Available."
+                        }
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
     `;

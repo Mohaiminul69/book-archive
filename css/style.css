@@ -1,18 +1,46 @@
-#loadingBtn {
-  display: none;
-}
-.btn-blue {
-  background: rgb(41, 155, 136);
-}
-.text-blue {
-  color: rgb(41, 126, 155);
-  color: rgb(41, 155, 136);
-}
-.book-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem;
-}
+/* Utilities Start */
+
 img {
   height: 500px !important;
 }
+.w-43 {
+  width: 43%;
+}
+
+/* Utilities End */
+
+/* Custom Colors Start */
+
+.text-green {
+  color: rgb(16, 129, 110);
+}
+.text-grey {
+  color: rgb(104, 108, 109);
+}
+.btn-green {
+  background: rgb(16, 129, 110);
+}
+
+/* Custom Colors End */
+
+/* Loading Display Property Start */
+
+#loadingBtn {
+  display: none;
+}
+
+/* Loading Display Property End */
+
+/* Table Customization Start */
+
+.table > :not(caption) > * > * {
+  padding: 4px;
+}
+.table {
+  margin-bottom: 0;
+}
+.table tr:last-child {
+  border-color: white;
+}
+
+/* Table Customization End */

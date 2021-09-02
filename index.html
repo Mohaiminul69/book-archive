@@ -30,7 +30,12 @@
 
       <section class="container my-5 py-2">
         <h1 class="text-center">Book Archive</h1>
+
+        <!-- Input Group Start -->
+        <!-- Input Group Start -->
+
         <div class="input-group my-4 w-50 mx-auto">
+          <!-- Search Input Start -->
           <input
             type="text"
             class="form-control"
@@ -39,13 +44,24 @@
             aria-label="Recipient's username"
             aria-describedby="searchBtn"
           />
-          <button class="btn btn-blue text-white" type="button" id="searchBtn">
+          <!-- Search Input End -->
+
+          <!-- Search Button Start -->
+          <button class="btn btn-green text-white" type="button" id="searchBtn">
             Search
           </button>
+          <!-- Search Button End -->
         </div>
+
+        <!-- Input Group End -->
+        <!-- Input Group End -->
+
+        <!-- Loading Spinner Start -->
+        <!-- Loading Spinner Start -->
+
         <div class="d-flex justify-content-center">
           <button
-            class="mx-auto btn btn-blue text-white"
+            class="mx-auto btn btn-green text-white"
             id="loadingBtn"
             type="button"
             disabled
@@ -58,14 +74,28 @@
             Loading...
           </button>
         </div>
+
+        <!-- Loading Spinner End -->
+        <!-- Loading Spinner End -->
+
+        <!-- Book-list Container Start -->
+        <!-- Book-list Container Start -->
+
         <div id="book-list-container">
+          <!-- Display Book Number Start -->
           <h5 id="numberofBooks"></h5>
+          <!-- Display Book Number End -->
+
+          <!-- Book-list Start -->
           <div
             id="book-list"
             class="row row-cols-1 row-cols-md-3 g-4 py-2"
           ></div>
-          <!-- <div id="book-list" class="book-grid"></div> -->
+          <!-- Book-list End -->
         </div>
+
+        <!-- Book-list Container End -->
+        <!-- Book-list Container End -->
       </section>
 
       <!-- Book-list Section End -->
