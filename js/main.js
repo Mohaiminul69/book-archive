@@ -23,6 +23,16 @@ document.getElementById("searchInput").addEventListener("keyup", (e) => {
 
 const getInputText = () => {
   const inputText = document.getElementById("searchInput").value;
+  /*
+<-------------------- Empty Input Error Handling -------------------->
+*/
+  if (inputText === "") {
+    const bookList = document.getElementById("book-list");
+    const h5 = document.getElementById("numberofBooks");
+    bookList.textContent = "";
+    h5.innerHTML = `<span class="text-danger">Please enter a valid input . . .</span>`;
+    return;
+  }
   document.getElementById("searchInput").value = "";
   searchResultCleaner("none");
   loadingToggler("block");
