@@ -107,7 +107,9 @@ const displayBooks = (data) => {
                   <tbody>
                     <tr class="fw-bold">
                       <td class="w-43">Book Name :</td>
-                      <td class="text-grey text-capitalize">${book.title}</td>
+                      <td class="text-grey text-capitalize">${
+                        book.title ? book.title : "Title Not Found"
+                      }</td>
                     </tr>
                     <tr class="fw-bold">
                       <td class="w-43">Author Name :</td>
