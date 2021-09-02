@@ -116,7 +116,7 @@ const displayBooks = (data) => {
                       <td class="text-grey text-capitalize">${
                         book.author_name
                           ? book.author_name[0]
-                          : "Author not found"
+                          : "Author Not found"
                       }
                       </td>
                     </tr>
