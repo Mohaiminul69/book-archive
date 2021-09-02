@@ -70,13 +70,13 @@ const displayBooks = (data) => {
 <-------------------- Start of Conditions for the number of books to be found -------------------->
 */
   if (numberOfBooksFound > 100) {
-    h5.innerHTML = `Showing <span class="text-green">100</span> out of <span class="text-green">${numberOfBooksFound}</span> books found`;
+    h5.innerHTML = `Showing <span class="text-green">100</span> books in the list out of <span class="text-green">${numberOfBooksFound}</span> of the founded results.`;
   } else if (numberOfBooksFound === 1) {
-    h5.innerHTML = `Showing <span class="text-green">${numberOfBooksFound}</span> book in the List`;
+    h5.innerHTML = `Showing <span class="text-green">${numberOfBooksFound}</span> book in the list from the founded result.`;
   } else if (numberOfBooksFound === 0) {
-    h5.innerHTML = `<span class="text-danger">Sorry no books found by this name . . .</span>`;
+    h5.innerHTML = `<span class="text-danger">Sorry no books were found by this name . . .</span>`;
   } else {
-    h5.innerHTML = `Showing <span class="text-green">${numberOfBooksFound}</span> books in the list`;
+    h5.innerHTML = `Showing <span class="text-green">${numberOfBooksFound}</span> books in the list from the founded results.`;
   }
   /*
 <-------------------- End of Conditions for the number of books to be found -------------------->
