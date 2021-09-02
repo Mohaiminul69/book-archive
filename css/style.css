@@ -1,0 +1,23 @@
+#loadingBtn {
+  display: none;
+}
+.bg-red {
+  background: rgb(205, 208, 209);
+}
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+.custom-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgb(104, 104, 104);
+  border-radius: 7px;
+  height: 100%;
+}
+.custom-card .card-body {
+  align-self: flex-end;
+  height: 200px;
+}

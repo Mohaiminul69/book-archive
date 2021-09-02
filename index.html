@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Imported Links Start -->
+    <!-- Imported Links Start -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Imported Links End -->
+    <!-- Imported Links End -->
+
+    <title>Book Archive</title>
+  </head>
+
+  <body>
+    <!-- Main Start -->
+    <!-- Main Start -->
+
+    <main>
+      <!-- Book-list Section Start -->
+      <!-- Book-list Section Start -->
+
+      <section class="container my-5 py-2">
+        <h1 class="text-center">Book Archive</h1>
+        <div class="input-group my-4 w-50 mx-auto">
+          <input
+            type="text"
+            class="form-control"
+            id="searchInput"
+            placeholder="Search . . ."
+            aria-label="Recipient's username"
+            aria-describedby="searchBtn"
+          />
+          <button class="btn btn-danger" type="button" id="searchBtn">
+            Search
+          </button>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button
+            class="mx-auto btn btn-danger"
+            id="loadingBtn"
+            type="button"
+            disabled
+          >
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            ></span>
+            Loading...
+          </button>
+        </div>
+        <!-- <div id="book-list" class="row row-cols-1 row-cols-md-3 g-4 py-2"></div> -->
+        <div id="book-list" class="book-grid py-2"></div>
+      </section>
+
+      <!-- Book-list Section End -->
+      <!-- Book-list Section End -->
+    </main>
+
+    <!-- Main End -->
+    <!-- Main End -->
+
+    <!-- JavaScript Files Start -->
+    <!-- JavaScript Files Start -->
+
+    <!-- Main JS File -->
+    <script src="js/main.js"></script>
+
+    <!-- JavaScript Files End -->
+    <!-- JavaScript Files End -->
+  </body>
+</html>
